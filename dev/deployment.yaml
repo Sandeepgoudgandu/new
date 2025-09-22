@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: springboot-mongo-deployment
+  name: myapp
   labels:
-    app: springboot-mongo
+    app: myapp
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: springboot-mongo
+      app: myapp
   template:
     metadata:
       labels:
-        app: springboot-mongo
+        app: myapp
     spec:
       containers:
       - name: springboot-mongo-container
