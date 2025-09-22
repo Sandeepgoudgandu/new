@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-mongo-deployment
+  labels:
+    app: springboot-mongo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: springboot-mongo
+  template:
+    metadata:
+      labels:
+        app: springboot-mongo
+    spec:
+      containers:
+      - name: springboot-mongo-container
+        image: sandeepgoudgandu/spring-boot-mongo:latest
+        ports:
+        - containerPort: 8080
